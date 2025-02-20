@@ -3,25 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Hub Test</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1 align="center">Welcome to the website.This is my first website</h1>
-    <hr/>
-    <br>
-    <br/>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, quibusdam rem cum repudiandae adipisci dolorum laborum odit dolore ad suscipit eius sint ab officia eum, non nisi nobis. Nostrum, sint!
-    Minus veniam temporibus doloribus itaque molestiae assumenda cum ab quas commodi eaque iusto deserunt nisi soluta, expedita ipsa dolorem obcaecati ullam. Ipsa libero dolore ratione consectetur eveniet non unde architecto.
-    Ad officia, consequatur sed quasi itaque aperiam a, dignissimos vero voluptate amet labore laudantium mollitia quidem ipsum ullam necessitatibus! Officia nemo consequuntur temporibus unde quo necessitatibus commodi maiores nihil. Perferendis.
-    Ex laborum amet repellendus perferendis, adipisci culpa delectus a saepe cum quae totam facere id sapiente labore odit modi sequi nemo rem rerum nam. Ut est pariatur necessitatibus iure illo?
-    Odit quisquam minima a totam accusamus velit illum dolores magnam unde officia consequatur dolorum similique, tempora repellat ex eveniet omnis doloribus placeat sapiente ratione dolor, libero nostrum quod! Sint, dignissimos?
-    Aspernatur atque accusamus possimus dolorem ex adipisci quaerat molestias, pariatur rerum. Vero nemo rerum corporis sint officiis sequi atque iure repudiandae tempora fugit sapiente, amet id molestias, ullam dolorem exercitationem!
-    Voluptatem quas ab cupiditate adipisci numquam nemo eligendi laborum, libero vitae inventore nam, eos ea sit, quia obcaecati incidunt ratione repellat non id molestias? Illo fuga eum reiciendis quaerat odit.
-    Veniam nam, eligendi, impedit aut asperiores veritatis fugit adipisci suscipit laborum ipsam architecto. Pariatur excepturi eveniet praesentium repudiandae, debitis autem necessitatibus minima in, temporibus quos quia doloribus sit consectetur perferendis!
-    Officiis perspiciatis similique, voluptatibus placeat voluptate dolores maxime explicabo voluptates, nobis, blanditiis neque fuga provident fugit accusamus dicta corrupti officia recusandae sit. Iste incidunt, quos sunt temporibus quae mollitia distinctio.
-    Quam nostrum maxime quisquam. Placeat eveniet sit repellat atque consequuntur architecto harum dolorem, ipsum aspernatur. Ipsam nemo cum a quaerat eius molestiae labore saepe distinctio dolor? Aliquid nulla illo iure!</p>
-    <img src="./Images/car.jpg" alt="car-img" width="500" height="280">
-    <h3>Link to about page click down</h3>
-    <a href="./about.html">Click here</a>
+    <header>
+        <a href="#" class="logo"><span>A</span>ctiveLink.</a>
+        <nav class="responsive-lg">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+        </nav>
+        <i class="iconStyle fa-solid fa-bars" onclick="showModal()"></i>
+    </header>
+    <nav class="responsive-sm">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="home"><h1>Home</h1></section>
+    <section id="about"><h1>About</h1></section>
+    <section id="services"><h1>Services</h1></section>
+    <section id="portfolio"><h1>Portfolio</h1></section>
+    <section id="contact"><h1>Contact</h1></section>
+    <script>
+        function showModal(){
+            document.querySelector('.responsive-sm').classList.toggle('view');
+        }
+        let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top+80 >= offset && top < offset + height) {
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Select only links inside the correct nav
+            document.querySelectorAll(`nav a[href="#${id}"]`).forEach(link => {
+                link.classList.add('active');
+            });
+        }
+    });
+};
+
+    </script>
 </body>
 </html>
