@@ -1,1 +1,125 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Roboto;
+}
+header{
+    position: fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    padding:20px 120px;
+    background-color:#11141a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+}
+.logo span{
+    color:rgb(204, 21, 255);
+    font-weight: 900;
+}
+nav a{
+    font-size: 16px;
+    text-decoration: none;
+    color:#fff;
+    margin-left: 35px;
+    transition: .3s;
+}
+.active{
+    color:aquamarine;
+}
+nav a:hover{
+    color:aquamarine;
+}
+section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #394150;
+}
+section h1{
+    font-size: 75px;
+    font-weight: 700;
+    color:#fff;
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-delay: .3s;
+}
+section:nth-child(odd){
+    background-color: rgb(78, 85, 83);
+}
+::selection{
+    background-color: bisque;
+    color:red;
+}
+@keyframes scroll{
+    0%{
+        transform:translateX(300px);
+    }
+    25%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+i{
+    margin-left: 30px;
+    color:white;
+    font-size: 25px;
+    display: none !important;
+}
+@media (max-width:768px){
+    header>.responsive-lg{
+        display: none;
+    }
+    header{
+        padding:20px 30px;
+    }
+    .responsive-sm{
+        color: #fff;
+        background-color: rgb(41, 41, 41);
+        position: fixed;
+        top:50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:0px;
+        padding:0px;
+        height:0px;
+        overflow: hidden;
+        right:0px;
+        transition-property: height;
+        transition-duration: .5s;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .responsive-sm a{
+        padding:30px;
+    }
+    .view{
+        z-index: 99;
+        width:70%;
+        height:400px;
+        padding:40px;
+    }
+    i{
+        display: block !important;
+    }
+}
+
 
