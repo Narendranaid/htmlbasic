@@ -15,7 +15,7 @@ window.onscroll = () => {
             navLinks.forEach(link => link.classList.remove('active'));
 
             // Select only links inside the correct nav
-            document.querySelectorAll(`nav a[href="#${id}"]`).forEach(link => {
+            document.querySelectorAll(`nav a[href*=${id}]`).forEach(link => {
                 link.classList.add('active');
             });
         }
